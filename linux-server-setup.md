@@ -158,6 +158,7 @@ sudo ufw default allow outgoing
 sudo ufw allow 2222/tcp         # SSH порт
 sudo ufw enable
 sudo ufw status
+sudo ufw logging off           # это выключение логов, делается на выключенном ufw
 ```
 
 ### Для CentOS/RHEL с firewalld:
