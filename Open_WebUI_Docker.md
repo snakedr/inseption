@@ -53,33 +53,15 @@ cd open-webui-project
 
 sudo nano docker-compose.yml
 =======================
-version: '3.9'
-
 services:
-  open-webui:
-    image: ghcr.io/open-webui/open-webui:main-slim
-    container_name: open-webui
-    # Запуск от имени обычного пользователя
-    user: "${UID}:${GID}" 
-    # Порт 3000 на хосте -> Порт 8080 в контейнере
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
     ports:
       - "3000:8080"
     volumes:
-      # Использование именованного тома для данных
-      - open-webui-data:/app/backend/data
-    environment:
-      # ВКЛЮЧАЕМ АУТЕНТИФИКАЦИЮ (требуется, так как есть пользователи)
-      - WEBUI_AUTH=True
-      # ОТКЛЮЧАЕМ поиск Ollama
-      - ENABLE_OLLAMA_API=False
-      # ОТКЛЮЧАЕМ загрузку Embedding-модели (для экономии ОЗУ)
-      - EMBEDDING_MODEL=False
-      - TZ=Europe/Moscow 
-    restart: always
-
-# Определение тома для постоянного хранения данных
+      - open-webui:/app/backend/data
 volumes:
-  open-webui-data:
+  open-webui:
 =======================
 
 #Запустите контейнер в фоновом режиме, используя команду docker compose:
