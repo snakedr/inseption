@@ -1,5 +1,5 @@
 ```bash
-# Установка Debian 13.1 + Open WebUI + Gemini API (1 ГБ ОЗУ)
+# Установка Debian 13.2 + Open WebUI + Gemini API (1 ГБ ОЗУ)
 
 ## 0. Обновление системы
 
