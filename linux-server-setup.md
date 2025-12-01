@@ -154,8 +154,7 @@ sudo yum install -y git curl wget vim htop firewalld fail2ban
 
 ```bash
 sudo apt install ufw
-sudo ufw allow 80 # Открыть порт 80 (HTTP)
-
+sudo ufw allow 80 # открыть порт 80 (HTTP)
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow 2222/tcp         # SSH порт
