@@ -153,12 +153,19 @@ sudo yum install -y git curl wget vim htop firewalld fail2ban
 ### Для Debian/Ubuntu с UFW:
 
 ```bash
+sudo apt install ufw
+sudo ufw allow 80 # Открыть порт 80 (HTTP)
+
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow 2222/tcp         # SSH порт
-sudo ufw enable
-sudo ufw status
-sudo ufw logging off           # это выключение логов, делается на выключенном ufw
+sudo ufw delete allow 80 # Удалить разрешение для порта 80
+sudo ufw delete allow 22/tcp # Удалить разрешение для порта 22 с протоколом
+sudo ufw status # проверить статус
+sudo ufw status verbose # проверить статус
+sudo ufw logging off # это выключение логов, делается на выключенном ufw
+sudo ufw enable # включить Firewall
+sudo ufw disable # выключить Firewall
 ```
 
 ### Для CentOS/RHEL с firewalld:
