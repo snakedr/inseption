@@ -1,11 +1,11 @@
-1. Установка Docker на Debian 13.2
-1.1 Обновляем систему и ставим зависимости
+#1. Установка Docker на Debian 13.2
+##1.1 Обновляем систему и ставим зависимости
 
 ```bash
 sudo apt update
 sudo apt install -y ca-certificates curl gnupg lsb-release
 
-1.2 Добавляем официальный GPG-ключ Docker
+##1.2 Добавляем официальный GPG-ключ Docker
 
 ```bash
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -15,7 +15,7 @@ curl -fsSL https://download.docker.com/linux/debian/gpg \
   | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-1.3 Добавляем репозиторий Docker
+##1.3 Добавляем репозиторий Docker
 
 ```bash
 echo \
@@ -24,13 +24,13 @@ echo \
   $(lsb_release -cs) stable" \
   | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-1.4 Устанавливаем Docker
+##1.4 Устанавливаем Docker
 
 ```bash
 sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-1.5 Проверяем
+##1.5 Проверяем
 
 ```bash
 docker --version
