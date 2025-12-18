@@ -81,7 +81,6 @@ cd ~/ollama
 
 ```bash
 cat > docker-compose.yml << 'EOF'
-version: "3.9"
 
 services:
   ollama:
