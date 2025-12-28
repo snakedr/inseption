@@ -60,7 +60,7 @@ cat <<EOF > /var/www/html/index.html
 EOF
 
 # 5. Права доступа
-echo -e "${GREEN}4️⃣  Настраиваем права (chown/chmod)...${NC}"
+echo -e "${GREEN} Настраиваем права (chown/chmod)...${NC}"
 chown -R www-data:www-data /var/www/html
 chmod -R 755 /var/www/html
 
@@ -77,7 +77,7 @@ echo -e "${BLUE}=========================================${NC}"
 read -p " Хотите настроить HTTPS (Let's Encrypt)? (y/n): " SETUP_SSL
 
 if [[ "$SETUP_SSL" =~ ^[Yy]$ ]]; then
-    read -p "🌍 Введите ваш домен (например, example.com): " DOMAIN_NAME
+    read -p "Введите ваш домен (например, example.com): " DOMAIN_NAME
 
     if [ -z "$DOMAIN_NAME" ]; then
         echo -e "${RED} Домен не введен. Пропускаем SSL.${NC}"
